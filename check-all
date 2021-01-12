@@ -25,6 +25,7 @@ CHECK star star -ws1s
 CHECK star star-ring -ws1s
 CHECK philo philo_binary_sim "-1 -ws1s"
 CHECK philo philo_binary_asim_tweak "-1 -ws1s"
+CHECK philo philo_emma "-1 -ws1s"
 CHECK philo philo_ternary -ws1s
 
 #ws2s

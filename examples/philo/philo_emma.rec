@@ -1,0 +1,19 @@
+Ring(a) :=
+  [a1] _let_ b, c, d, e _in_
+  (b.take_left a.grb + b.take_right c.grb + d.take_left c.grb + d.take_right e.grb)
+  (b : philo_LR, c: fork, d : philo_RL, e : fork, Pipe(e,a))
+;
+Pipe(a,a) :=
+  [a2]
+  ()
+  ()
+;
+Pipe(a,z) :=
+  [a3] _let_ b, c _in_
+  (b.take_left a.grb + b.take_right c.grb)
+  (b : philo_LR, c : fork, Pipe(c,z))
+|
+  [a4] _let_ b, c _in_
+  (b.take_left a.grb + b.take_right c.grb)
+  (b : philo_RL, c : fork, Pipe(c,z))
+;
